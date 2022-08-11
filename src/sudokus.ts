@@ -1,4 +1,6 @@
-export const sudoku = 
+import { Sudoku } from "./types";
+
+export const sudoku: Sudoku = 
 [
 [7,3,2, 9,4,5, 8,6,1],
 [1,9,8, 6,3,7, 2,5,4],
@@ -12,7 +14,7 @@ export const sudoku =
 [3,7,6, 5,8,9, 4,1,2],
 [2,1,9, 4,7,3, 6,8,5]
 ];
-export const invalidSudoku = 
+export const invalidSudoku: Sudoku = 
 [
 [7,3,2, 9,4,5, 8,6,1],
 [1,9,8, 6,7,3, 2,5,4],

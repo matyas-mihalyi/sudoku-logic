@@ -1,4 +1,6 @@
-const createArraysFromColumns = (sudoku: number[][]) => {
+import { Sudoku } from "./types";
+
+const createArraysFromColumns = (sudoku: Sudoku) => {
   const columns = new Array(9).fill([]);
     
   for (let currentRow = 0; currentRow < sudoku.length; currentRow++) {
@@ -14,7 +16,7 @@ const createArraysFromColumns = (sudoku: number[][]) => {
   return columns
 }
 
-const createArraysFromSquares = (sudoku: number[][]) => {
+const createArraysFromSquares = (sudoku: Sudoku) => {
   const squares = new Array(9).fill([]);
 
   for (let row = 0; row < sudoku.length; row++) {
@@ -45,7 +47,7 @@ const createArraysFromSquares = (sudoku: number[][]) => {
 
 }
 
-const checkValidity = (arr: number[][]) => {
+const checkValidity = (arr: Array<Sudoku>) => {
   let valid = true;
   for (let i = 0; i < arr.length; i++) {
     if (valid) {
@@ -66,7 +68,7 @@ const checkValidity = (arr: number[][]) => {
   return valid
 }
 
-export const validateSudoku = (sudoku: number[][]) => {
+export const validateSudoku = (sudoku: Sudoku) => {
   const rows = sudoku;
   const columns = createArraysFromColumns(sudoku);
   const squares = createArraysFromSquares(sudoku);
