@@ -2,10 +2,11 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "esnext",
-    "outDir": "dist",
+    "outDir": "./lib",
     "moduleResolution": "node",
     "sourceMap": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declaration": true
   },
   "include": ["src"],
   "lib": "ES2015"

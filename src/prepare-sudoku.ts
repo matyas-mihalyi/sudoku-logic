@@ -19,6 +19,4 @@ export const removeRandomCells = (sudoku: Sudoku, numberOfCellsToRemove: number)
   } 
     
   return sudoku
-  
-
 }
