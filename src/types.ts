@@ -1,3 +1,4 @@
-type NineBoxes<T> = [T, T, T, T, T, T, T, T, T]
+type ArrayOf9Elements<T> = [T, T, T, T, T, T, T, T, T]
 
-export type Sudoku = NineBoxes<NineBoxes<number>>;
+// export type Sudoku = ArrayOf9Elements<ArrayOf9Elements<number>>;
+export type Sudoku = number[][];
