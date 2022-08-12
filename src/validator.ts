@@ -1,6 +1,6 @@
 import { Sudoku } from "./types";
 
-const createArraysFromColumns = (sudoku: Sudoku) => {
+export const createArraysFromColumns = (sudoku: Sudoku): Sudoku => {
   const columns = new Array(9).fill([]);
     
   for (let currentRow = 0; currentRow < sudoku.length; currentRow++) {
@@ -52,11 +52,13 @@ const checkValidity = (arr: Array<Sudoku>) => {
   for (let i = 0; i < arr.length; i++) {
     if (valid) {
       const currentArray = arr[i];
-  
       currentArray.forEach(item => {
+
         if (currentArray.filter(e => e === item).length > 1) {
+          console.error("Error in: ", i,item)
           valid = false
         }
+
       })
 
     } else {
