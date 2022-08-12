@@ -1,8 +1,10 @@
+import { Sudoku } from "./types";
+
 const getRandomIntUpTo = (max: number) => Math.floor(Math.random() * max);
 
 const numberOfEmptyCells = (sudoku) => sudoku.flat().filter(cell => cell === undefined).length;
 
-export const removeRandomCells = (sudoku: number[][], numberOfCellsToRemove: number) => {  
+export const removeRandomCells = (sudoku: Sudoku, numberOfCellsToRemove: number) => {  
   const row = getRandomIntUpTo(sudoku.length);
   const column = getRandomIntUpTo(sudoku.length);
 

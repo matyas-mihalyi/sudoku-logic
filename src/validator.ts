@@ -1,20 +1,17 @@
 import { Sudoku } from "./types";
 
 export const createArraysFromColumns = (sudoku: Sudoku): Sudoku => {
-  const columns = new Array(9).fill([]);
-    
-  for (let currentRow = 0; currentRow < sudoku.length; currentRow++) {
-    const row = sudoku[currentRow];
-    
-    for (let i = 0; i < row.length; i++) {
-      const number = row[i];
-      columns[i] = [...columns[i], number];
+  const columns = Array.apply(null, Array(9)).map(()=> []) as Sudoku;
+  
+  for (let row = 0; row < sudoku.length; row++) {
+    for (let col = 0; col < sudoku.length; col++) {      
+      columns[col].push(sudoku[row][col]);
     }
-    
   }
 
   return columns
 }
+
 
 const createArraysFromSquares = (sudoku: Sudoku) => {
   const squares = new Array(9).fill([]);
@@ -55,7 +52,7 @@ const checkValidity = (arr: Array<Sudoku>) => {
       currentArray.forEach(item => {
 
         if (currentArray.filter(e => e === item).length > 1) {
-          console.error("Error in: ", i,item)
+          console.error("Error at column", i, "row", item)
           valid = false
         }
 

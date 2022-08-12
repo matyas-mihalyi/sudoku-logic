@@ -23,7 +23,7 @@ const shuffleSquaresHorizontally = (sudoku: Sudoku) => {
 const shuffleSquaresVertically = (sudoku: Sudoku) => {
   const columns: Sudoku = createArraysFromColumns(sudoku);
   const groupedColumns = [[columns[0], columns[1], columns[2]], [columns[3], columns[4], columns[5]], [columns[6], columns[7], columns[8]]];
-  const result = shuffleArray(groupedColumns).flat();
+  const result = shuffleArray(groupedColumns).flat() as Sudoku;
   return createArraysFromColumns(result);
 }
 
@@ -33,13 +33,13 @@ const shuffleRows = (sudoku) => {
 
 const shuffleColumns = (sudoku) => {
   const columns: Sudoku = createArraysFromColumns(sudoku);
-  const shuffledColumns: Sudoku = [shuffleArray([columns[0], columns[1], columns[2]]), shuffleArray([columns[3], columns[4], columns[5]]), shuffleArray([columns[6], columns[7], columns[8]])].flat()
+  const shuffledColumns = [shuffleArray([columns[0], columns[1], columns[2]]), shuffleArray([columns[3], columns[4], columns[5]]), shuffleArray([columns[6], columns[7], columns[8]])].flat() as Sudoku
   return createArraysFromColumns(shuffledColumns);
 }
 
 export const shuffleSudoku = (inputSudoku: Sudoku): Sudoku => {
   const sudoku = createCopy(inputSudoku);
-  const shuffledSquares = shuffleSquaresHorizontally(sudoku);
+  const shuffledSquares = shuffleSquaresHorizontally(sudoku) as Sudoku;
   const shuffledSquaresVertically = shuffleSquaresVertically(shuffledSquares);
   const shuffledRows = shuffleRows(shuffledSquaresVertically);
   const final = shuffleColumns(shuffledRows);
