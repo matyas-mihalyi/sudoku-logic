@@ -1,6 +1,6 @@
 {
   "name": "sudoku-logic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Module for generating and validating sudoku boards",
   "types": "lib/app.d.ts",
   "main": "lib/app",

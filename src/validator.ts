@@ -6,7 +6,7 @@ export const createArraysFromColumns = (sudoku: Sudoku): Sudoku => {
   for (let row = 0; row < sudoku.length; row++) {
     for (let col = 0; col < sudoku.length; col++) {      
       columns[col].push(sudoku[row][col]);
-    }
+    } 
   }
 
   return columns

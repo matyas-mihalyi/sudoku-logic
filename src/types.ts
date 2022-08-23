@@ -1,4 +1,4 @@
-type Cell = number | undefined;
+type Cell = number | null;
 
 type ArrayOf9Elements<T> = [T, T, T, T, T, T, T, T, T];
 
